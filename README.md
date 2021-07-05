@@ -40,8 +40,39 @@ Sky130 Tech File Labs
 ------------------------------------------------------------
 
 DAY1 - Introduction to the requirements and the openlane flow
--------------------------------------------------------
+------------------------------------------------------------
 
 ![ASIC](https://user-images.githubusercontent.com/79994584/114556720-9b4d0980-9c86-11eb-91b1-140c0859d758.png)
 
 ![openlane](Images/Day1/openlane.flow.png)
+
+![openlane-start](Images/Day1/op1.png)
+
+![pdk](Images/Day1/op2-pdk.png)
+
+![prep](Images/Day1/op3-prep.png)
+
+![config](Images/Day1/op4-config.png)
+
+![runs](Images/Day1/op4-runs.png)
+
+![picorv32a](Images/Day1/opt6-synthesis-picorv32.png)
+------------------------------------------------------------
+
+DAY2 - Introduction to the requirements and the openlane flow
+------------------------------------------------------------
+
+------------------------------------------------------------
+
+DAY3 - Introduction to the requirements and the openlane flow
+------------------------------------------------------------
+
+------------------------------------------------------------
+
+DAY4 - Introduction to the requirements and the openlane flow
+------------------------------------------------------------
+
+------------------------------------------------------------
+
+DAY5 - Introduction to the requirements and the openlane flow
+------------------------------------------------------------
