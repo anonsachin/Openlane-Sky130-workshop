@@ -183,17 +183,23 @@ Standrad cells are what are used to convert your **behavioural** description of 
 There are various different types of standard librariries for various different purposes like like one with cells for faster, slower or medium performance and also other coners like temparature and voltage. These are used like Legos to create the chip to behave how you have defined.
 
 Here we tried to add a custom Inverter into the library
-
+- Magic view
 ![magic](Images/Day3/day3-invertor-custom.png)
+- Extraced this as spice mode
 ![extract to spice](Images/Day3/day3-extract.png)
+- view its characteristics on spice
 ![spice](Images/Day3/day3-spice-inv.png)
 
 <!-- ![floorplan](Images/Day2/day2-timing-variable.png) -->
+- Performed some characterisctics analysis on the delays
 ![rise-delay](Images/Day3/day3-rise-delay.png) 
 ![fall-delay](Images/Day3/day3-fall-delay.png)
 ![fall-propagation](Images/Day3/day3-fall-propagation-delay.png)
 
+We the looked in to the tech file  what is it made of and how magic uses and what are the DRC ( Design rule checks) how they are written and appear in magic for our use. The tech file is used to keep our magic layouts in check to the pdk rules.
+- poly rules example
 ![drc-poly](Images/Day3/day3-poly9.png)
+- Metal vias
 ![drc-metal](Images/Day3/m3-day3.png)
 
 ------------------------------------------------------------
@@ -201,14 +207,28 @@ Here we tried to add a custom Inverter into the library
 DAY4 - Integration of custom cell into picorv32a synthesis and **STA**
 ------------------------------------------------------------
 
+### **Standard cell Integration**
+
+we then went on to integrate the custom cell into the picorv32 cell
+- In the placement
 ![magic-base](Images/Day4/day4-inv-placement.png)
+- Expanded
 ![magic-place](Images/Day4/day4-expand-inv-placement.png)
+- In synthesis
 ![synthesis](Images/Day4/day4-inv-synthesis.png)
 
+### **Standard cell Lef vs Layout**
+The Entire layout of the 
 ![to-lef](https://raw.githubusercontent.com/nickson-jose/vsdstdcelldesign/master/Images/layout_vs_LEF.JPG)
 
+### **STA**
+
+- setup time
 ![setup](Images/Day4/skew.png)
+- hold time
 ![hold](Images/Day4/full-hold.png)
+
+STA is an iterative process of varying various parameters to get the slack of the device to be positive. It is done first done in the sythesis stage it has various nobs to turn they are done by setting `env variables in the openlane`
 
 ![sta-area](Images/Day4/day4-area-set.png)
 
