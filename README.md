@@ -212,11 +212,11 @@ DAY4 - Integration of custom cell into picorv32a synthesis and **STA**
 we then went on to integrate the custom cell into the picorv32 cell
 for more detail look at [vsdstdcelldesign](https://github.com/nickson-jose/vsdstdcelldesign)
 - In the placement
-![magic-base](Images/Day4/day4-inv-placement.png)
+    ![magic-base](Images/Day4/day4-inv-placement.png)
 - Expanded
-![magic-place](Images/Day4/day4-expand-inv-placement.png)
+    ![magic-place](Images/Day4/day4-expand-inv-placement.png)
 - In synthesis
-![synthesis](Images/Day4/day4-inv-synthesis.png)
+    ![synthesis](Images/Day4/day4-inv-synthesis.png)
 
 ### **Standard cell Lef vs Layout**
 The Entire layout of the layout of the cell is not needed to perform placement and the steps after. So usually only a lef file is provided it has the details of the pins and characteristics.
@@ -229,9 +229,9 @@ There are some Inherent timing requirements that need to be match for the proper
 
 These are the type of timing errors that can happen
 - setup time
-![setup](Images/Day4/skew.png)
+    ![setup](Images/Day4/skew.png)
 - hold time
-![hold](Images/Day4/full-hold.png)
+    ![hold](Images/Day4/full-hold.png)
 
 STA is an iterative process of varying various parameters to get the slack of the device to be positive. It is done first done in the sythesis stage it has various nobs to turn they are done by setting `env variables in the openlane`
 
