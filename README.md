@@ -288,12 +288,35 @@ In OpenLANE we run clock tree synthesis with **TritonCTS** the commad for that i
 
 DAY5 - Introduction to routing and power grids
 ------------------------------------------------------------
-[lee's algorithm](https://www.vlsisystemdesign.com/maze-routing-lees-algorithm/)
+
+### **Routing**
+
+[lee's algorithm](https://www.vlsisystemdesign.com/maze-routing-lees-algorithm/) was used to explain the routing process and how the algorthim finds the path from source to destination and with least number of bends.
+
 ![lee's](https://www.vlsisystemdesign.com/wp-content/uploads/2016/12/least_derouted_path.jpeg)
 
-![trionroute](Images/Day5/route-image.png)
+### **Power distribution  in OpenLANE**
 
 ![power-plan](Images/Day5/power_planning.png)
+
+```
+    gen_pdn
+```
+
+### **Routing in OpenLANE**
+
+The command
+```
+    run_routing
+```
+
+This will perform routing in two stages
+
+- **Global routing** - This is a course level of placemnet of routes of all the entities. This is done with **FastRoute**.
+- **Detailed routing** - This is where the global routes are broken down and perform the routing in proper form in the different metal layers.
+
+    ![trionroute](Images/Day5/route-image.png)
+
 
 ------------------------------------------------------------
 
