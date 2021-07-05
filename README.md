@@ -212,10 +212,13 @@ DAY4 - Integration of custom cell into picorv32a synthesis and **STA**
 we then went on to integrate the custom cell into the picorv32 cell
 for more detail look at [vsdstdcelldesign](https://github.com/nickson-jose/vsdstdcelldesign)
 - In the placement
+
     ![magic-base](Images/Day4/day4-inv-placement.png)
 - Expanded
+
     ![magic-place](Images/Day4/day4-expand-inv-placement.png)
 - In synthesis
+
     ![synthesis](Images/Day4/day4-inv-synthesis.png)
 
 ### **Standard cell Lef vs Layout**
