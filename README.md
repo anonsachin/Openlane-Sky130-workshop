@@ -39,23 +39,84 @@ Sky130 Tech File Labs
 
 ------------------------------------------------------------
 
-DAY1 - Introduction to the requirements and the openlane flow
+DAY1 - Introduction to openlane, the need and  requirement openlane
 ------------------------------------------------------------
+
+### **ASIC**
+
+ASIC (Application Specific integrated cicuit) are devices that built as the name suggests specific uses. The requirements to build them are as shown below
 
 ![ASIC](https://user-images.githubusercontent.com/79994584/114556720-9b4d0980-9c86-11eb-91b1-140c0859d758.png)
 
+You need all three elements even if one them are missing you cannot completely develop it. The EDA tools and PDK's were till recently not opensource, but with the release of opensource have democratized the ASIC design space.
+
+- RTL IP - RTL's opensourced with github and other places
+- PDK Data - with the introduction [skywater pdk](https://github.com/google/skywater-pdk)
+- EDA tools - tools and flows like qflow, openlane etc...
+
+### **OpenLANE**
+
 ![openlane](Images/Day1/openlane.flow.png)
+
+Openlane is a set of tools bundled together that facilitate the flow of **ASIC** design from **RTL to GDSII**. It consists of the following tools bundled in the form of a docker container.
+```
+    - OpenROAD
+    - Yosys
+    - Magic
+    - Netgen
+    - Fault
+    - OpenPhySyn
+    - CVC
+    - SPEF-Extractor
+    - CU-GR
+    - Klayout
+    - custom methodology scripts 
+```
+once you are in the docker container you can start using it by runnning
+
+```
+    // this will get you an interactive 
+    // way of interfacing with the tool
+    ./flow.tcl -interactive 
+    // Specify the PDK_ROOT env to point to 
+    // the pdk to be used.
+```
 
 ![openlane-start](Images/Day1/op1.png)
 
+### **Skywater-130 PDK**
+
+PDK is what allows us to interface with fabs to get the IC's made, they provide the rules and other details required to make it happen. Google and Skywater foundry have worked together to opensource there `130nm` process.
+
 ![pdk](Images/Day1/op2-pdk.png)
 
+Now we can load our designs into with 
+```
+    prep -design <name of you design>
+```
+for it to be read the design has to be located in a particular location of your current directory as shown below. This is just a barebones requirement.
+```
+designs
+└── <name of your design>
+    ├── config.tcl
+    └── src
+        └── < your filename>.v
+```
+- load design
 ![prep](Images/Day1/op3-prep.png)
 
+- config of the picorv32a design used
 ![config](Images/Day1/op4-config.png)
 
+- contents of a run
 ![runs](Images/Day1/op4-runs.png)
 
+You can then generate the netlist of your design by running
+
+```
+    run_synthesis
+```
+- synthesis
 ![picorv32a](Images/Day1/opt6-synthesis-picorv32.png)
 
 ------------------------------------------------------------
