@@ -92,6 +92,7 @@ PDK is what allows us to interface with fabs to get the IC's made, they provide 
 
 Now we can load our designs into with 
 ```
+    package require openlane 0.9 // to get the packages
     prep -design <name of you design>
 ```
 for it to be read the design has to be located in a particular location of your current directory as shown below. This is just a barebones requirement.
@@ -123,16 +124,51 @@ You can then generate the netlist of your design by running
 
 DAY2 - Introduction to floorplaning and considerations
 ------------------------------------------------------------
-![floorplan](Images/Day2/day2-voltage-drop.png)
-![floorplan](Images/Day2/day2-ground-bounce.png)
-![floorplan](Images/Day2/day2-timing-variable.png)
-![floorplan](Images/Day2/day2-modular.png)
+
+For the floorplaning of the SoC, which is the process of defining which all elements need to be placed and where.
+
+- Die - this is the complete encapsulation of the IC, including the logic gate, IP's and Pads
+
+- Pre-Placed cells - These are like other entities that need to be placed in the cell for its functionality and once placed are not moved after.
+
+- Decoupling capacitors - these are capacitors added to make sure that output of the logical function stays in a good range and does not fall below or above the noise margin
+
+- Pin placement - the location of the pins that interface the outside world, there are different stratergies available for this
+
+- Power planning - The way power lines are routed through the chip should be considered and not rely on a single power source, it will lead to the following problems.
+    - Voltage drop
+    ![floorplan](Images/Day2/day2-voltage-drop.png)
+    - Ground Bounce
+    ![floorplan](Images/Day2/day2-ground-bounce.png)
+<!-- ![floorplan](Images/Day2/day2-modular.png) -->
+
+You can generate the floor plan by running
+```
+    run_floorplan
+```
+- generated files in magic
 ![floorplan](Images/Day2/day2-floorplan.png)
 ![floorplan](Images/Day2/day2-magic-floor-plan.png)
+- The pins in the floor plan
 ![floorplan](Images/Day2/day2-horzontal.png)
 ![floorplan](Images/Day2/day2-vertical.png)
+
+### **Placement**
+
+This is the process of creating the placement of our netlist on to the floor plan. There are two stages
+
+- Global placement - where the elements are grouped together and there is a coarse placement.
+
+- Detailed  placement - adds more details to the different groups of the coarse placement
+
+we can run the following command for it
+```
+    run_placement
+```
+The placement viewed in magic
+
 ![placement](Images/Day2/day2-placemnet.png)
-![routing](Images/Day2/day2-routing.png)
+<!-- ![routing](Images/Day2/day2-routing.png) -->
 
 ------------------------------------------------------------
 
@@ -143,6 +179,7 @@ DAY3 - Introduction to custom cells and sky130tech file
 ![extract to spice](Images/Day3/day3-extract.png)
 ![spice](Images/Day3/day3-spice-inv.png)
 
+![floorplan](Images/Day2/day2-timing-variable.png)
 ![rise-delay](Images/Day3/day3-rise-delay.png) 
 ![fall-delay](Images/Day3/day3-fall-delay.png)
 ![fall-propagation](Images/Day3/day3-fall-propagation-delay.png)
