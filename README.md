@@ -210,6 +210,7 @@ DAY4 - Integration of custom cell into picorv32a synthesis and **STA**
 ### **Standard cell Integration**
 
 we then went on to integrate the custom cell into the picorv32 cell
+for more detail look at [vsdstdcelldesign](https://github.com/nickson-jose/vsdstdcelldesign)
 - In the placement
 ![magic-base](Images/Day4/day4-inv-placement.png)
 - Expanded
@@ -218,11 +219,15 @@ we then went on to integrate the custom cell into the picorv32 cell
 ![synthesis](Images/Day4/day4-inv-synthesis.png)
 
 ### **Standard cell Lef vs Layout**
-The Entire layout of the 
+The Entire layout of the layout of the cell is not needed to perform placement and the steps after. So usually only a lef file is provided it has the details of the pins and characteristics.
+
 ![to-lef](https://raw.githubusercontent.com/nickson-jose/vsdstdcelldesign/master/Images/layout_vs_LEF.JPG)
 
 ### **STA**
 
+There are some Inherent timing requirements that need to be match for the proper operations of circuits. STA is used to measure the deviations from the required operation requirements.
+
+These are the type of timing errors that can happen
 - setup time
 ![setup](Images/Day4/skew.png)
 - hold time
@@ -231,6 +236,47 @@ The Entire layout of the
 STA is an iterative process of varying various parameters to get the slack of the device to be positive. It is done first done in the sythesis stage it has various nobs to turn they are done by setting `env variables in the openlane`
 
 ![sta-area](Images/Day4/day4-area-set.png)
+
+The possible [variables](https://github.com/The-OpenROAD-Project/OpenLane/blob/master/configuration/README.md). Some of the variables we play arround with are 
+| Variable      | Description                                                   |
+|---------------|---------------------------------------------------------------|
+| `SYNTH_DRIVING_CELL`  | The cell to drive the input ports. <br>(Default: `sky130_fd_sc_hd__inv_8`)|
+| `SYNTH_STRATEGY` | Strategies for abc logic synthesis and technology mapping <br> Possible values are `DELAY/AREA 0-3/0-2`; the first part refers to the optimization target of the synthesis strategy (area vs. delay) and the second one is an index. <br> (Default: `AREA 0`)|
+| `SYNTH_BUFFERING` | Enables abc cell buffering <br> Enabled = 1, Disabled = 0 <br> (Default: `1`)|
+| `SYNTH_SIZING` | Enables abc cell sizing (instead of buffering) <br> Enabled = 1, Disabled = 0 <br> (Default: `0`)|
+
+### **OpenSTA**
+
+We used the following configuration file to open OpenSTA and reduced the slack using env varialble and also replacing cells.
+
+```
+set_cmd_units -time ns -capacitance pF -current mA -voltage V -resistance kOhm -distance um
+read_liberty -min </location/to/min_lib>
+read_liberty -max </location/to/max_lib>
+read_verilog </location/to/verilog_file>
+link_design <Top-Module-name>
+read_sdc </location/to/sdc_file>
+report_checks -path_delay min_max -fields {slew trans net cap input_pin}
+report_tns
+report_wns
+```
+
+Then Wrote out the new netlist with
+```
+    write_verilog <location>
+```
+
+### **Clock tree**
+
+We the learnt about clock trees and how they are used to provide the clocks to all the flops at the same time. The **H tree** clockc tree was explaned
+
+![H-tree](https://www.researchgate.net/profile/Sherif-Tawfik/publication/220337855/figure/fig5/AS:667654029312004@1536192533172/An-H-tree-clock-distribution-network-The-index-of-each-level-is-indicated-with-the.png)
+
+There are some recuirements for the clock tree
+
+- Every level clock buffer must be the same type, for uniform delay from that element
+- Leafs driven must be of the same load
+- Timing tables are used to calculate the delay
 
 ------------------------------------------------------------
 
