@@ -271,7 +271,7 @@ Then Wrote out the new netlist with
 
 ### **Clock tree**
 
-We the learnt about clock trees and how they are used to provide the clocks to all the flops at the same time. The **H tree** clockc tree was explaned
+We the learnt about clock trees and how they are used to provide the clocks to all the flops at the same time. The **H tree** clock tree was explained
 
 ![H-tree](https://www.researchgate.net/profile/Sherif-Tawfik/publication/220337855/figure/fig5/AS:667654029312004@1536192533172/An-H-tree-clock-distribution-network-The-index-of-each-level-is-indicated-with-the.png)
 
@@ -281,7 +281,7 @@ There are some recuirements for the clock tree
 - Leafs driven must be of the same load
 - Timing tables are used to calculate the delay
 
-In OpenLANE we run clock tree synthesis with **TritonCTS** the commad for that is -
+In OpenLANE we run clock tree synthesis with **TritonCTS**, the commad for that is -
 
 ```
     run_cts
