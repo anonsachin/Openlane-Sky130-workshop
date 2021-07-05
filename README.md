@@ -109,6 +109,10 @@ DAY4 - Integration of custom cell into picorv32a synthesis and **STA**
 
 DAY5 - Introduction to routing and power grids
 ------------------------------------------------------------
+[lee's algorithm](https://www.vlsisystemdesign.com/maze-routing-lees-algorithm/)
+![lee's](https://www.vlsisystemdesign.com/wp-content/uploads/2016/12/least_derouted_path.jpeg)
+
+![trionroute](Images/Day5/route-image.png)
 
 ![power-plan](Images/Day5/power_planning.png)
 
