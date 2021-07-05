@@ -57,6 +57,7 @@ DAY1 - Introduction to the requirements and the openlane flow
 ![runs](Images/Day1/op4-runs.png)
 
 ![picorv32a](Images/Day1/opt6-synthesis-picorv32.png)
+
 ------------------------------------------------------------
 
 DAY2 - Introduction to floorplaning and considerations
@@ -71,6 +72,7 @@ DAY2 - Introduction to floorplaning and considerations
 ![floorplan](Images/Day2/day2-vertical.png)
 ![placement](Images/Day2/day2-placemnet.png)
 ![routing](Images/Day2/day2-routing.png)
+
 ------------------------------------------------------------
 
 DAY3 - Introduction to custom cells and sky130tech file
@@ -92,7 +94,29 @@ DAY3 - Introduction to custom cells and sky130tech file
 DAY4 - Integration of custom cell into picorv32a synthesis and **STA**
 ------------------------------------------------------------
 
+![magic-base](Images/Day4/day4-inv-placement.png)
+![magic-place](Images/Day4/day4-expand-inv-placement.png)
+![synthesis](Images/Day4/day4-inv-synthesis.png)
+
+![to-lef](https://raw.githubusercontent.com/nickson-jose/vsdstdcelldesign/master/Images/layout_vs_LEF.JPG)
+
+![setup](Images/Day4/skew.png)
+![hold](Images/Day4/full-hold.png)
+
+![sta-area](Images/Day4/day4-area-set.png)
+
 ------------------------------------------------------------
 
 DAY5 - Introduction to routing and power grids
 ------------------------------------------------------------
+
+![power-plan](Images/Day5/power_planning.png)
+
+------------------------------------------------------------
+
+Acknowledgements
+----------------
+1. Kunal Ghosh - Co-founder (VSD Corp)
+2. Nickson Jose - Teaching Assistant
+3. Mansi Mohapatra - Teaching Assistant
+4. Mili Anand - Teaching Assistant
