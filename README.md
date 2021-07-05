@@ -58,6 +58,7 @@ DAY1 - Introduction to the requirements and the openlane flow
 
 ![picorv32a](Images/Day1/opt6-synthesis-picorv32.png)
 ------------------------------------------------------------
+
 DAY2 - Introduction to floorplaning and considerations
 ------------------------------------------------------------
 ![floorplan](Images/Day2/day2-voltage-drop.png)
@@ -74,6 +75,17 @@ DAY2 - Introduction to floorplaning and considerations
 
 DAY3 - Introduction to custom cells and sky130tech file
 ------------------------------------------------------------
+
+![magic](Images/Day3/day3-invertor-custom.png)
+![extract to spice](Images/Day3/day3-extract.png)
+![spice](Images/Day3/day3-spice-inv.png)
+
+![rise-delay](Images/Day3/day3-rise-delay.png) 
+![fall-delay](Images/Day3/day3-fall-delay.png)
+![fall-propagation](Images/Day3/day3-fall-propagation-delay.png)
+
+![drc-poly](Images/Day3/day3-poly9.png)
+![drc-metal](Images/Day3/m3-day3.png)
 
 ------------------------------------------------------------
 
