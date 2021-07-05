@@ -125,6 +125,7 @@ You can then generate the netlist of your design by running
 DAY2 - Introduction to floorplaning and considerations
 ------------------------------------------------------------
 
+### **Floor Planning**
 For the floorplaning of the SoC, which is the process of defining which all elements need to be placed and where.
 
 - Die - this is the complete encapsulation of the IC, including the logic gate, IP's and Pads
@@ -175,11 +176,19 @@ The placement viewed in magic
 DAY3 - Introduction to custom cells and sky130tech file
 ------------------------------------------------------------
 
+### **Standard cell**
+
+Standrad cells are what are used to convert your **behavioural** description of verilog code into a netlist and then into cells to be placed in the floor plan. They contain all the necessary details about the the cell, like area, power draw, timing etc.
+
+There are various different types of standard librariries for various different purposes like like one with cells for faster, slower or medium performance and also other coners like temparature and voltage. These are used like Legos to create the chip to behave how you have defined.
+
+Here we tried to add a custom Inverter into the library
+
 ![magic](Images/Day3/day3-invertor-custom.png)
 ![extract to spice](Images/Day3/day3-extract.png)
 ![spice](Images/Day3/day3-spice-inv.png)
 
-![floorplan](Images/Day2/day2-timing-variable.png)
+<!-- ![floorplan](Images/Day2/day2-timing-variable.png) -->
 ![rise-delay](Images/Day3/day3-rise-delay.png) 
 ![fall-delay](Images/Day3/day3-fall-delay.png)
 ![fall-propagation](Images/Day3/day3-fall-propagation-delay.png)
