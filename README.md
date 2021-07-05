@@ -297,6 +297,8 @@ DAY5 - Introduction to routing and power grids
 
 ### **Power distribution  in OpenLANE**
 
+The power from the PADS is gotten and given to the all the components in the chips. This also shows why there are hieght restrictions on the cell this so that they are properly able to connect to the power and ground rails.
+
 ![power-plan](Images/Day5/power_planning.png)
 
 ```
@@ -317,6 +319,12 @@ This will perform routing in two stages
 
     ![trionroute](Images/Day5/route-image.png)
 
+### **GDSII in OpenLANE**
+
+The following command finally extracts the GDSII 
+```
+run_magic
+```
 
 ------------------------------------------------------------
 
