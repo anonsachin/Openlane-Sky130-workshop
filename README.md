@@ -58,21 +58,29 @@ DAY1 - Introduction to the requirements and the openlane flow
 
 ![picorv32a](Images/Day1/opt6-synthesis-picorv32.png)
 ------------------------------------------------------------
+DAY2 - Introduction to floorplaning and considerations
+------------------------------------------------------------
+![floorplan](Images/Day2/day2-voltage-drop.png)
+![floorplan](Images/Day2/day2-ground-bounce.png)
+![floorplan](Images/Day2/day2-timing-variable.png)
+![floorplan](Images/Day2/day2-modular.png)
+![floorplan](Images/Day2/day2-floorplan.png)
+![floorplan](Images/Day2/day2-magic-floor-plan.png)
+![floorplan](Images/Day2/day2-horzontal.png)
+![floorplan](Images/Day2/day2-vertical.png)
+![placement](Images/Day2/day2-placemnet.png)
+![routing](Images/Day2/day2-routing.png)
+------------------------------------------------------------
 
-DAY2 - Introduction to the requirements and the openlane flow
+DAY3 - Introduction to custom cells and sky130tech file
 ------------------------------------------------------------
 
 ------------------------------------------------------------
 
-DAY3 - Introduction to the requirements and the openlane flow
+DAY4 - Integration of custom cell into picorv32a synthesis and **STA**
 ------------------------------------------------------------
 
 ------------------------------------------------------------
 
-DAY4 - Introduction to the requirements and the openlane flow
-------------------------------------------------------------
-
-------------------------------------------------------------
-
-DAY5 - Introduction to the requirements and the openlane flow
+DAY5 - Introduction to routing and power grids
 ------------------------------------------------------------
