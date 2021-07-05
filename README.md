@@ -278,6 +278,12 @@ There are some recuirements for the clock tree
 - Leafs driven must be of the same load
 - Timing tables are used to calculate the delay
 
+In OpenLANE we run clock tree synthesis with **TritonCTS** the commad for that is -
+
+```
+    run_cts
+```
+
 ------------------------------------------------------------
 
 DAY5 - Introduction to routing and power grids
